@@ -57,7 +57,7 @@ const Registration = () => {
 
     return (
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>
+            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', maxWidth: '600px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>
                 <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
                 <h2>Supplier Connect</h2>
                 <div style={{ marginBottom: '10px', textAlign: 'left' }}>
