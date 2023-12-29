@@ -55,9 +55,9 @@ const Registration = () => {
 
     return (
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>               
-             <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
-                <h2>Registration</h2>
+            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>
+                <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+                <h2>Supplier Connect</h2>
                 <InputField
                     type="text"
                     placeholder="Enter your company name"
@@ -117,15 +117,16 @@ const Registration = () => {
                     error={touchedFields.confirmPassword && !confirmPassword && "Confirm Password is required field"}
                     style={{ marginBottom: '10px', width: '100%' }}
                 />
-                <div style={{ marginBottom: '10px', textAlign: 'left' }}>
-                    <label>
-                        <InputField
-                            type="checkbox"
-                            checked={agreeTerms}
-                            onChange={() => setAgreeTerms(!agreeTerms)}
-                            touched={(isTouched) => setTouchedFields({ ...touchedFields, agreeTerms: isTouched })}
-                            error={touchedFields.agreeTerms && !agreeTerms && "Agree Terms is required field"}
-                        />
+                <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
+                    <InputField
+                        type="checkbox"
+                        checked={agreeTerms}
+                        onChange={() => setAgreeTerms(!agreeTerms)}
+                        touched={(isTouched) => setTouchedFields({ ...touchedFields, agreeTerms: isTouched })}
+                        error={touchedFields.agreeTerms && !agreeTerms && "Agree Terms is required field"}
+                        style={{ marginRight: '10px' }}
+                    />
+                    <label style={{ flex: 1 }}>
                         I agree to the Al Shirawi Group credit terms and policy
                     </label>
                 </div>
