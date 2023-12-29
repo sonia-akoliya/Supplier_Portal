@@ -25,6 +25,10 @@ const Login = () => {
         }
     };
 
+    const handleCreateAccount = () => {
+        navigate('/register');
+      };
+
     return (
         <div style={{ border: '2px solid pink', padding: '20px', maxWidth: '400px', margin: 'auto' }}>
             <div style={{ marginBottom: '20px', textAlign: 'center' }}>
@@ -76,7 +80,7 @@ const Login = () => {
                     <button onClick={handleLogin} style={{ width : '100%', marginBottom: '10px' }}>Sign In</button>
                 </div>
                 <div>
-                    <button onClick={handleLogin} style={{ width : '100%', marginBottom: '10px' }}>Create an Account</button>
+                    <button onClick={handleCreateAccount} style={{ width : '100%', marginBottom: '10px' }}>Create an Account</button>
                 </div>
             </div>
         </div>
