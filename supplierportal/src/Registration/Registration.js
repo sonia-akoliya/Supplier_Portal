@@ -1,4 +1,3 @@
-// Registration.js
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +18,6 @@ const Registration = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [agreeTerms, setAgreeTerms] = useState(false);
 
-    // Track touched state for each input field
     const [touchedFields, setTouchedFields] = useState({
         companyName: false,
         email: false,
@@ -31,7 +29,6 @@ const Registration = () => {
 
     const handleSendOTP = async () => {
         try {
-            // Set touched for all fields
             setTouchedFields({
                 companyName: true,
                 email: true,
@@ -41,12 +38,10 @@ const Registration = () => {
                 agreeTerms: true,
             });
 
-            // Check for errors in any field
             if (!companyName || !email || !phoneNumber || !password || !confirmPassword || !agreeTerms) {
                 return;
             }
 
-            // Your registration logic here
             dispatch(fetchRegistrationUser());
             navigate('/welcome');
         } catch (error) {
@@ -60,8 +55,8 @@ const Registration = () => {
 
     return (
         <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center' }}>
-                <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+            <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>               
+             <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
                 <h2>Registration</h2>
                 <InputField
                     type="text"
@@ -79,7 +74,6 @@ const Registration = () => {
                     touched={(isTouched) => setTouchedFields({ ...touchedFields, email: isTouched })}
                     error={touchedFields.email && !email && "Email is required field"}
                 />
-                {/* Add other fields with InputField component and error handling */}
                 <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }}>
                     <select
                         value={selectedCountry.code}
