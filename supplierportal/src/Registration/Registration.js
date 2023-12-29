@@ -17,6 +17,7 @@ const Registration = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [agreeTerms, setAgreeTerms] = useState(false);
+    const [location, setLocation] = useState('UAE');
 
     const [touchedFields, setTouchedFields] = useState({
         companyName: false,
@@ -25,6 +26,7 @@ const Registration = () => {
         password: false,
         confirmPassword: false,
         agreeTerms: false,
+        location: false,
     });
 
     const handleSendOTP = async () => {
@@ -58,6 +60,29 @@ const Registration = () => {
             <div style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)', padding: '20px', maxWidth: '400px', textAlign: 'center', marginLeft: 'auto', marginRight: '10%' }}>
                 <img src={logo} alt="Logo" style={{ width: '150px', height: 'auto' }} />
                 <h2>Supplier Connect</h2>
+                <div style={{ marginBottom: '10px', textAlign: 'left' }}>
+                    <label>
+                        <input
+                            type="radio"
+                            value="UAE"
+                            checked={location === 'UAE'}
+                            onChange={() => {
+                                setLocation('UAE');
+                                setSelectedCountry(countryCodes.find(country => country.code === 'AE'));
+                            }}
+                        />
+                        UAE
+                    </label>
+                    <label style={{ marginLeft: '20px' }}>
+                        <input
+                            type="radio"
+                            value="OUTSIDE UAE"
+                            checked={location === 'OUTSIDE UAE'}
+                            onChange={() => setLocation('OUTSIDE UAE')}
+                        />
+                        OUTSIDE UAE
+                    </label>
+                </div>
                 <InputField
                     type="text"
                     placeholder="Enter your company name"
