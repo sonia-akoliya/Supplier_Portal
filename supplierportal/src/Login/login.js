@@ -3,10 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { selectLoginUser } from './login.selector';
 import { fetchLoginUser } from './login.action';
-import { actions as loginActions } from './login.reducer';
-
-const { setLoginUser } =
-    loginActions;
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -21,8 +17,7 @@ const Login = () => {
                 "Username": username,
                 "Password": password
             }
-            dispatch(fetchLoginUser({ body: queryFilter }));  // api calling
-            //dispatch(setLoginUser(queryFilter));  // setting value by reducer
+            dispatch(fetchLoginUser({ body: queryFilter }));
              navigate('/welcome');
         } catch (error) {
             console.error('POST request failed', error);
